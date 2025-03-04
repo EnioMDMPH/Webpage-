@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Radiology Cases</title>
+    <style>
+        .explanation {
+            display: none; /* Initially hide explanations */
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Radiology Case Study</h2>
+    <p>Click on the links below to view the explanation:</p>
+
+    <ul>
+        <li><a href="#" onclick="showExplanation('case1')">View Explanation for Case 1</a></li>
+        <li><a href="#" onclick="showExplanation('case2')">View Explanation for Case 2</a></li>
+    </ul>
+
+    <div id="case1" class="explanation">
+        <h3>Case 1 Explanation</h3>
+        <p>This image represents a CT scan showing signs of pancreatitis...</p>
+    </div>
+
+    <div id="case2" class="explanation">
+        <h3>Case 2 Explanation</h3>
+        <p>This MRI scan highlights a hepatic lesion indicative of HCC...</p>
+    </div>
+
+    <script>
+        function showExplanation(caseId) {
+            // Hide all explanations first
+            var explanations = document.querySelectorAll('.explanation');
+            explanations.forEach(function(el) {
+                el.style.display = 'none';
+            });
+
+            // Show the selected explanation
+            document.getElementById(caseId).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
